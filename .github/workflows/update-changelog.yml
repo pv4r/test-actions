@@ -1,0 +1,30 @@
+name: Update CHANGELOG
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Prepend to CHANGELOG
+        run: |
+          # Crea un nuevo encabezado con la fecha
+          RELEASE_HEADER="## [${{ github.event.release.tag_name }}] - $(date +'%Y-%m-%d')\n\n${{ github.event.release.body }}\n\n"
+          
+          # Si el archivo no existe, crearlo
+          if [ ! -f CHANGELOG.md ]; then
+            echo -e "# Changelog\n\n$RELEASE_HEADER" > CHANGELOG.md
+          else
+            # Insertar nuevo contenido al principio
+            echo -e "$RELEASE_HEADER$(cat CHANGELOG.md)" > CHANGELOG.tmp
+            mv CHANGELOG.tmp CHANGELOG.md
+          fi
+          
+          git config user.name "github-bot"
+          git config user.email "actions@github.com"
+          git add CHANGELOG.md
+          git commit -m "docs: Add ${{ github.event.release.tag_name }} to CHANGELOG"
+          git push
