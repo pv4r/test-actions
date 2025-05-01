@@ -13,7 +13,6 @@ categories:
       - 'doc'
       - 'docs'
       - 'documentation'
-      
 version-resolver:
   major:
     labels:
