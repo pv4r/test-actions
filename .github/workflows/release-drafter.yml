@@ -41,6 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
       - name: Debug release-drafter
+        id: release-drafter
         run: |
           echo "Tag Name: ${{ steps.release-drafter.outputs.tag_name }}"
       # Create the tag using the output from rlease-drafter
