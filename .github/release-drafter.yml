@@ -1,3 +1,5 @@
+name-template: 'v$RESOLVED_VERSION 🐣'
+tag-template: 'v$RESOLVED_VERSION'
 categories: # You can categorize pull requests in release notes using labels.
   - title: '🚀 Features'
     labels: 
