@@ -44,12 +44,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      - name: Debug release-drafter
+      - name: Debug resolved_version
         run: |
-          echo "Tag Name: ${{ steps.release-drafter.outputs.tag_name }}"
+          echo "Resolved Version: ${{ steps.release-drafter.outputs.resolved_version }}"
       # Create the tag using the output from rlease-drafter
       - name: Create Tag
-        if: ${{ github.ref == 'refs/heads/main' && steps.release-drafter.outputs.tag_name }}
+        if: ${{ github.ref == 'refs/heads/main' && steps.release-drafter.outputs.resolved_version}}
         run: |
-          git tag ${{ steps.release-drafter.outputs.tag_name }}
-          git push origin ${{ steps.release-drafter.outputs.tag_name }}
+          git tag ${{ steps.release-drafter.outputs.resolved_version}}
+          git push origin ${{ steps.release-drafter.outputs.resolved_version }}
