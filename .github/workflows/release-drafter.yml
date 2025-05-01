@@ -40,3 +40,9 @@ jobs:
         #   disable-autolabeler: true
         env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+      # Create the tag using the output from rlease-drafter
+      - name: Create Tag
+        if: ${{ github.ref == 'refs/heads/main' && steps.release-drafter.outputs.tag_name }}
+        run: |
+          git tag ${{ steps.release-drafter.outputs.tag_name }}
+          git push origin ${{ steps.release-drafter.outputs.tag_name }}
