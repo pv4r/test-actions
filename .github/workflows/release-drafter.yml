@@ -41,15 +41,3 @@ jobs:
         #   disable-autolabeler: true
         env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        
-      - name: Debug resolved_version
-        run: |
-          echo "Resolved Version: ${{ steps.release-drafter.outputs.resolved_version }}"
-      # Create the tag using the output from rlease-drafter
-      - name: Create Tag
-        if: ${{ github.ref == 'refs/heads/main' && steps.release-drafter.outputs.resolved_version}}
-        run: |
-          git tag ${{ steps.release-drafter.outputs.resolved_version}}
-          git push origin ${{ steps.release-drafter.outputs.resolved_version }}
