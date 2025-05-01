@@ -24,6 +24,21 @@ version-resolver:
     labels:
       - 'patch'
   default: patch
+autolabeler:
+  - label: 'documentation'
+    branch:
+      - '/docs{0,1}\/.+/'
+  - label: 'fix'
+    title: 
+      - '/fix/i'         # "fix" en el título (case insensitive)
+      - '/bug/i'
+    branch:
+      - '/fix\/.+/'
+  - label: 'enhancement'
+    branch:
+      - '/feature\/.+/'
+    body:
+      - '/RX-[0-9]{1,4}/'
 template: |
   ## Changes
 
