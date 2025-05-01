@@ -53,6 +53,8 @@ autolabeler: # You can add automatically a label into a PR, with the autolabeler
   - label: 'patch'
     title:
       - '/^\(PATCH\)/i' # Match "(PATCH) ..." or "(patch) ..."
+    branch:
+      - '/hotfix\/.+/'
 include-labels: # Only pull requests that have the configured labels will be included in the release draft.
   - 'feature'
   - 'enhancement'
