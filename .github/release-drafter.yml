@@ -46,13 +46,13 @@ autolabeler: # You can add automatically a label into a PR, with the autolabeler
       - '/refactor\/.+/'
   - label: 'major'
     title:
-      - '/^\[MAJOR\]/i' # Match "[MAJOR] ..." or "[major] ..."  
+      - '/^\(MAJOR\)/i' # Match "(MAJOR) ..." or "(major) ..."  
   - label: 'minor'
     title:
-      - '/^\[MINOR\]/i' # Match "[MINOR] ..." or "[minor] ..."
+      - '/^\(MINOR\)/i' # Match "(MINOR) ..." or "(minor) ..."
   - label: 'patch'
     title:
-      - '/^\[PATCH\]/i' # Match "[PATCH] ..." or "[patch] ..."
+      - '/^\(PATCH\)/i' # Match "(PATCH) ..." or "(patch) ..."
 include-labels: # Only pull requests that have the configured labels will be included in the release draft.
   - 'feature'
   - 'enhancement'
