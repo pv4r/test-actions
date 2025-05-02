@@ -3,6 +3,7 @@ categories: # You can categorize pull requests in release notes using labels.
     labels: 
       - 'feature'
       - 'enhancement'
+      - 'minor'
   - title: '🐛 Bug Fixes'
     labels:
       - 'fix'
@@ -25,7 +26,6 @@ version-resolver: # Version number incrementing can be resolved automatically ba
   minor:
     labels:
       - 'minor'
-      - 'enhancement'
   patch:
     labels:
       - 'patch'
