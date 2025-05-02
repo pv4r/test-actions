@@ -21,12 +21,15 @@ version-resolver: # Version number incrementing can be resolved automatically ba
   major:
     labels:
       - 'major'
+      - 'major-release'
   minor:
     labels:
-      - 'minor' 
+      - 'minor'
+      - 'minor-release'
   patch:
     labels:
       - 'patch'
+      - 'hotfix'
   default: patch
 autolabeler: # You can add automatically a label into a PR, with the autolabeler option. 
   - label: 'documentation'
@@ -44,13 +47,13 @@ autolabeler: # You can add automatically a label into a PR, with the autolabeler
   - label: 'refactor'
     branch:
       - '/refactor\/.+/'
-  - label: 'major'
+  - label: 'major-release'
     title:
       - '/^\(MAJOR\)/i' # Match "(MAJOR) ..." or "(major) ..."  
-  - label: 'minor'
+  - label: 'minor-release'
     title:
       - '/^\(MINOR\)/i' # Match "(MINOR) ..." or "(minor) ..."
-  - label: 'patch'
+  - label: 'hotfix'
     title:
       - '/^\(PATCH\)/i' # Match "(PATCH) ..." or "(patch) ..."
     branch:
