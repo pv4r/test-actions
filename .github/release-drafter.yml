@@ -27,7 +27,6 @@ version-resolver: # Version number incrementing can be resolved automatically ba
   patch:
     labels:
       - 'patch'
-  default: patch
 autolabeler: # You can add automatically a label into a PR, with the autolabeler option. 
   - label: 'documentation'
     branch:
