@@ -23,7 +23,7 @@ version-resolver: # Version number incrementing can be resolved automatically ba
       - 'major'
   minor:
     labels:
-      - 'minor' 
+      - 'minor'
   patch:
     labels:
       - 'patch'
@@ -44,17 +44,6 @@ autolabeler: # You can add automatically a label into a PR, with the autolabeler
   - label: 'refactor'
     branch:
       - '/refactor\/.+/'
-  - label: 'major'
-    title:
-      - '/^\(MAJOR\)/i' # Match "(MAJOR) ..." or "(major) ..."  
-  - label: 'minor'
-    title:
-      - '/^\(MINOR\)/i' # Match "(MINOR) ..." or "(minor) ..."
-  - label: 'patch'
-    title:
-      - '/^\(PATCH\)/i' # Match "(PATCH) ..." or "(patch) ..."
-    branch:
-      - '/hotfix\/.+/'
 include-labels: # Only pull requests that have the configured labels will be included in the release draft.
   - 'feature'
   - 'enhancement'
@@ -66,6 +55,9 @@ include-labels: # Only pull requests that have the configured labels will be inc
   - 'doc'
   - 'docs'
   - 'documentation'
+  - 'minor'
+  - 'major'
+  - 'patch'
 name-template: 'v$RESOLVED_VERSION 🐣'
 tag-template: 'v$RESOLVED_VERSION'
 template: |
