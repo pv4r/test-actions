@@ -1,5 +1,3 @@
-prerelease: true
-prerelease-identifier: 'alpha' # will create a prerelease with version number x.x.x-alpha.x
 categories: # You can categorize pull requests in release notes using labels.
   - title: '💥 Breaking Changes'
     labels:
