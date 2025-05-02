@@ -23,7 +23,7 @@ version-resolver: # Version number incrementing can be resolved automatically ba
       - 'major'
   minor:
     labels:
-      - 'minor'
+      - 'minor' 
   patch:
     labels:
       - 'patch'
