@@ -25,7 +25,7 @@ version-resolver: # Version number incrementing can be resolved automatically ba
   minor:
     labels:
       - 'minor'
-      - 'minor-release'
+      - 'enhancement'
   patch:
     labels:
       - 'patch'
