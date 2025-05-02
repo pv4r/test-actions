@@ -1,3 +1,4 @@
+prerelease: true
 categories: # You can categorize pull requests in release notes using labels.
   - title: '💥 Breaking Changes'
     labels:
