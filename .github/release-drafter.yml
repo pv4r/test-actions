@@ -9,6 +9,7 @@ categories: # You can categorize pull requests in release notes using labels.
     labels:
       - 'fix'
   - title: '🧪 Tests'
+    labels:
       - 'test'
   - title: '🔧 Refactors'
     labels:
