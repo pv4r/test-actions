@@ -17,6 +17,9 @@ categories: # You can categorize pull requests in release notes using labels.
   - title: '📚 Documentation'
     labels:
       - 'doc'
+  - title: 'Maintenance'
+    labels:
+      - 'chore'
 version-resolver: # Version number incrementing can be resolved automatically based on labels of individual pull requests
   major:
     labels:
@@ -47,6 +50,9 @@ autolabeler: # You can add automatically a label into a PR, with the autolabeler
   - label: 'doc'
     branch:
       - '/docs{0,1}\/.+/'
+  - label: 'chore'
+    branch:
+      - '/chore\/.+/'
 include-labels: # Only pull requests that have the configured labels will be included in the release draft.
   - 'breaking-change'
   - 'feature'
@@ -54,6 +60,7 @@ include-labels: # Only pull requests that have the configured labels will be inc
   - 'test'
   - 'refactor'
   - 'doc'
+  - 'chore'
 name-template: 'v$RESOLVED_VERSION 🐣'
 tag-template: 'v$RESOLVED_VERSION'
 template: |
