@@ -17,7 +17,7 @@ categories: # You can categorize pull requests in release notes using labels.
   - title: '📚 Documentation'
     labels:
       - 'doc'
-  - title: 'Maintenance'
+  - title: '🧹 Maintenance'
     labels:
       - 'chore'
 version-resolver: # Version number incrementing can be resolved automatically based on labels of individual pull requests
